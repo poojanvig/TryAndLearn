@@ -4,6 +4,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* background-color: #24252a; */
+}
+body {
   background-color: #24252a;
 }
 li,
@@ -20,9 +23,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
+  background-color: #24252a;
 }
 .logo {
-  width: 20%;
+  width: 40%;
   /* border-radius: 100%; */
   cursor: pointer;
   /* order: 3; */
@@ -50,14 +54,19 @@ nav {
 button {
   margin-left: 20px;
   padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
+  /* background-color: rgba(0, 136, 169, 1); */
+  background-color: #5cfdb2;
+  color: #10003d;
+
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 button:hover {
-  background-color: rgba(0, 136, 169, 0.8);
+  /* background-color: rgba(0, 136, 169, 0.8); */
+  /* background-color: #5cfdb2; */
+  transform: scale(1.05);
 }
 .cta {
   order: 2;
