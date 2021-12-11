@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/styles2.css">
+        <link rel="stylesheet" href="css/questions.css">
+        <link href="./css/prism.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <header>
+            <a href="index.html"> <img class="logo" src="logo/Main_logo.png"
+                    alt="logo">
+            </a>
+            <nav>
+                <ul class="nav_link">
+                    <li><a href="#">content</a></li>
+                    <li><a href="#">practice prbs</a></li>
+                    <li><a href="#">Quize</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="books.html"><button>Books</button></a>
+        </header>
+        <div class="qusitions-container">
+            <div class="question">
+                <p>Q.1 Age Calculator</p>
+            </div>
+            <div class="solution-section">
+                <p class="solution-button" onclick="solutionClicked(event)">
+                    Show Solution
+                </p>
+                <pre class="solution">
+                   
+    
+    <code class="language-clike" >
+         /*
+    Aim: WAP to print a letter as shown below using escape sequences.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+    #include<</p>time.h></p>
+
+        /*check given year is leap year or not*/
+        int isLeapYear(int year, int mon) {
+         int flag = 0;
+         if (year % 100 == 0)
+         {
+         if (year % 400 == 0)
+         {
+         if (mon == 2)
+         {
+         flag = 1;
+         }
+         }
+         }
+         else if (year % 4 == 0)
+         {
+         if (mon == 2)
+         {
+         flag = 1;
+         }
+         }
+         return (flag); }
+        int main() {
+         int DaysInMon[] = {31, 28, 31, 30, 31, 30,
+         31, 31, 30, 31, 30, 31};
+         int days, month, year;
+         char dob[100];
+         time_t ts;
+         struct tm *ct;
+         /* enter date of birth */
+         printf("Enter your date of birth (DD/MM/YYYY): ");
+         scanf("%d/%d/%d",&days,&month, &year);
+         /*get current date.*/
+         ts = time(NULL);
+         ct = localtime(&ts);
+         printf("Current Date: %d/%d/%d\n",
+         ct->tm_mday, ct->tm_mon + 1, ct->tm_year + 1900);
+         days = DaysInMon[month - 1] - days + 1;
+         /* leap year checking*/
+         if (isLeapYear(year, month))
+         {
+         days = days + 1;
+         }
+         /* calculating age in no of days, years and months */
+         days = days + ct->tm_mday;
+         month = (12 - month) + (ct->tm_mon);
+         year = (ct->tm_year + 1900) - year - 1;
+         /* checking for leap year feb - 29 days */
+         if (isLeapYear((ct->tm_year + 1900), (ct->tm_mon + 1)))
+         {
+         if (days >= (DaysInMon[ct->tm_mon] + 1))
+         {
+         days = days - (DaysInMon[ct->tm_mon] + 1);
+         month = month + 1;
+         }
+         }
+         else if (days >= DaysInMon[ct->tm_mon])
+         {
+         days = days - (DaysInMon[ct->tm_mon]);
+         month = month + 1;
+         }
+         if (month >= 12)
+         {
+         year = year + 1;
+         month = month - 12;
+         }
+         /* print age */
+         printf("\n## Hey you are %d years %d months and %d days old. ##\n", year, month, days
+         return 0; }
+                        </code>
+                    </pre>
+            </div>
+        </div>
+        <div class="qusitions-container">
+            <div class="question">
+                <p>Q.2 Write a C program to calculate total average and percentage of five subjects.</p>
+            </div>
+            <div class="solution-section">
+                <p class="solution-button" onclick="solutionClicked(event)">
+                    Show Solution
+                </p>
+                <pre class="solution">
+                   
+    
+    <code class="language-clike" >
+         /*
+    Aim: WAP to calculate total average and percentage of five subjects.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+    
+    int main() 
+    {
+        float eng, phy, chem, math, comp;
+        float total, average, percentage;
+        /* Input marks of all five subjects */
+        printf("Enter marks of five subjects: \n");
+        scanf("%f%f%f%f%f", &eng, &phy, &chem, &math, &comp);
+        /* Calculate total, average and percentage */
+        total = eng + phy + chem + math + comp;
+        average = total / 5.0;
+        percentage = (total / 500.0) * 100;
+        /* Print all results */
+        printf("Total marks = %.2f\n", total);
+        printf("Average marks = %.2f\n", average);
+        printf("Percentage = %.2f", percentage);
+        return 0;
+     }
+                        </code>
+                    </pre>
+            </div>
+        </div> <div class="qusitions-container">
+            <div class="question">
+                <p>Q.3 Write C program to find angles of triangle if two angles are given.</p>
+            </div>
+            <div class="solution-section">
+                <p class="solution-button" onclick="solutionClicked(event)">
+                    Show Solution
+                </p>
+                <pre class="solution">
+                   
+    
+    <code class="language-clike" >
+         /*
+    Aim: WAP to find angles of triangle if two angles are given.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+    
+    int main() 
+    {
+        int a, b, c;
+        /* Input two angles of the triangle */
+        printf("Enter two angles of triangle: ");
+        scanf("%d%d", &a, &b);
+        /* Compute third angle */
+        c = 180 - (a + b);
+        /* Print value of the third angle */
+        printf("Third angle of the triangle = %d", c);
+        return 0; 
+    }
+                        </code>
+                    </pre>
+            </div>
+        </div>
+
+        <div class="qusitions-container">
+            <div class="question">
+                <p>Q.4 C program to print box pattern using loops.</p>
+            </div>
+            <div class="solution-section">
+                <p class="solution-button" onclick="solutionClicked(event)">
+                    Show Solution
+                </p>
+                <pre class="solution">
+                   
+    
+    <code class="language-clike" >
+         /*
+    Aim: WAP to print box pattern using loops.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+    
+    int main()
+    {
+        int n, i, j, t; //n is representing number of the output box
+        //input n
+        scanf("%d", &n);
+        printf("Enter the value of n: ");
+        t = 2 * n - 1;
+        i = t; //i and j are the number of rows and columns of the box.
+        j = t;
+        // Declare box as a 2-D matrix having i number of rows 
+        //and j number of columns
+        int a[i][j], k, m, p;
+        p = n;
+        m = 0;
+        for (k = 0; k < p; k++) 
+          {
+          for (i = m; i < t; i++) 
+             {
+             for (j = m; j < t; j++) 
+                {
+                  if (i == m || i == (t - 1) || j == m || j == (t - 1)) {
+                  a[i][j] = n;
+                  if (n == 1) {
+                  break;
+                }
+             }
+           }
+        }
+        t = t - 1;
+        n = n - 1;
+        m = m + 1;
+        }
+        t = 2 * m - 1;
+        for (i = 0; i < t; i++) {
+        for (j = 0; j < t; j++) {
+        printf("%d ", a[i][j]);
+        }
+        printf("\n");
+        }
+        return 0; 
+    } 
+</code>    
+                    </pre>
+            </div>
+
+         <div class="qusitions-container">
+             <div class="question">
+                 <p>Q.5 Write a program in C to convert a decimal number to binary using recursion.</p>
+             </div>
+             <div class="solution-section">
+                 <p class="solution-button" onclick="solutionClicked(event)">
+                     Show Solution
+                 </p>
+                 <pre class="solution">
+                       
+    <code class="language-clike" >
+             /*
+    Aim: WAP to convert a decimal number to binary using recursion.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+
+        long convertBinary(int);
+        
+        int main()
+        {
+            long biNo;
+            int decNo;
+            
+            printf("\n\n Recursion : Convert decimal number to binary :\n");
+            printf("---------------------------------------------------\n");
+        
+            printf(" Input any decimal number : ");
+            scanf("%d",&decNo);
+        
+            biNo = convertBinary(decNo);//call the function convertBinary
+            printf(" The Binary value of decimal no. %d is : %ld\n\n",decNo,biNo);
+            return 0;
+        }
+        long convertBinary(int decNo)
+        {
+            static long biNo,r,fctor = 1;
+        
+            if(decNo != 0)
+            {
+                 r = decNo % 2;
+                 biNo = biNo + r * fctor;
+                 fctor = fctor * 10;
+                 convertBinary(decNo / 2);//calling the function convertBinary itself recursively
+            }
+            return biNo;
+        }
+    
+    </code>
+                    </pre>
+            </div>
+
+        <div class="qusitions-container">
+            <div class="question">
+                <p>Q.6 Write a C programming code to check if a given integer is a power of three.</p>
+            </div>
+            <div class="solution-section">
+                <p class="solution-button" onclick="solutionClicked(event)">
+                    Show Solution
+                </p>
+                <pre class="solution">
+                           
+            
+    <code class="language-clike" >
+         /*
+    Aim: WAP to check if a given integer is a power of three.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+    #include<</p>stdbool.h></p>
+
+        static bool is_PowerOf_Three(int n) {
+        #if 0
+            if (n == 1) return true;
+            if (n == 0 || n % 3) return false;
+            return is_PowerOf_Three(n / 3);
+        #else
+            return (n > 0 && (1162261467 % n) == 0);
+        #endif
+        }
+        int main(void)
+        {
+            int n = 9;
+            printf("\nIf %d is power of three? %d", n, is_PowerOf_Three(n));
+            n = 81;
+            printf("\n\nIf %d is power of three? %d", n, is_PowerOf_Three(n));
+            n = 45;
+            printf("\n\nIf %d is power of three? %d", n, is_PowerOf_Three(n));
+            return 0;
+        }
+    
+           
+    </code>
+                            </pre>
+                    </div>
+
+        <div class="qusitions-container">
+            <div class="question">
+                <p>Q.7 Write a C program to print all prime factors of a given number.</p>
+            </div>
+            <div class="solution-section">
+                <p class="solution-button" onclick="solutionClicked(event)">
+                    Show Solution
+                </p>
+                <pre class="solution">
+                               
+                
+    <code class="language-clike" >
+         /*
+    Aim: WAP to print all prime factors of a given number.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+    #include<</p>stdlib.h></
+        int main(void)
+          {   
+           //int n = 8; 
+           int n = 75; 
+          // int n = 18; 
+           printf("All prime factors of %d are: ",n);
+           if (n>0)
+            {	
+             while (n%2==0) 
+              { 
+                  printf("2 "); 
+                  n /= 2; 
+              } 
+        
+              for (int i = 3; i <= sqrt(n); i+= 2) 
+              { 
+                  while (n%i == 0) 
+                  { 
+                      printf("%d ",i); 
+                      n /= i; 
+                  } 
+              } 
+              if (n > 2) 
+                  printf("%d ",n); 
+             }
+             return 0;
+          }
+    
+                        </code>
+                    </pre>
+            </div>
+        <div class="qusitions-container">
+               <div class="question">
+                   <p>Q.8 Write a C program to find angle between given hour and minute hands.</p>
+               </div>
+               <div class="solution-section">
+                   <p class="solution-button" onclick="solutionClicked(event)">
+                       Show Solution
+                   </p>
+                   <pre class="solution">
+                                   
+                    
+    <code class="language-clike" >
+         /*
+    Aim: WAP to find angle between given hour and minute hands.
+    Author :
+    Class :
+    */
+    #include<</p>stdio.h></p>
+    #include<</p>math.h></
+        int calcAngle(int ha, int ma) 
+          { 
+              if (ha == 12) 
+                  ha = 0; 
+              if (ma == 60)  
+                  ma = 0; 
+              int hour_angle = (int)(0.5 * (ha*60 + ma)); 
+              int minute_angle = (int)(6*ma);   
+      
+              int angle = abs(hour_angle - minute_angle); 
+              int ang = 360-angle;     
+              return (ang > angle) ? angle : ang;
+          }     
+        
+        int main(void)
+      
+          {
+             int ha = 11;
+             printf("\nAngles move by hour hand: %d",ha);
+             int ma = 30;
+             printf("\nAngles move by minute hand: %d",ma);
+             if (ha <0 || ma < 0 || ha > 12 || ma > 60) 
+             {
+                printf("\nWrong input..!"); 
+             }
+             else
+             {
+                printf("\nAngle between hour and minute hands %d",calcAngle(ha, ma)); 	  
+             }
+          }
+                        </code>
+                    </pre>
+            </div>
+        <script>
+            function solutionClicked(e){
+                if(e.target.parentNode.querySelector(".solution").style.display=="block"){
+                e.target.parentNode.querySelector(".solution").style.display="none";
+                e.target.textContent="Show Solution";
+            }else{
+                e.target.parentNode.querySelector(".solution").style.display="block";
+                e.target.textContent="Hide";
+
+            }
+            }
+        </script>
+        <script src="./js/prism.js"></script>
+    </body>
+</html>

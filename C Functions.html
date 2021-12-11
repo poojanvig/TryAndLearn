@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Functions</title>
+  <link rel="stylesheet" href="css/content.css">
+  <link rel="stylesheet" href="css/questions.css">
+  <link href="./css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar btn">
+      <ul>
+        <li><strong>C Programming</strong></li>
+        <li><a href="CIntro.html">C Introduction</a></li>
+        <span> *Keywords & Identifiers<br>
+          *Variables & Constants<br>
+          *C Data Types<br>
+          *C Input/Output<br>
+          *C Operators<br>
+        </span>
+        <li><a href="flowcontrol.html">C Flow Control</a></li>
+        <span>
+          *C if...else<br>
+          *C for Loop<br>
+          *C while Loop<br>
+          *C break and continue<br>
+          *C switch...case<br>
+          *C Programming goto<br>
+          </p>
+          <li><a href="C Functions.html">C Functions</a></li>
+          <span>
+            *C Programming Functions<br>
+            *C User-defined Functions<br>
+            *C Function Types<br>
+            *C Recursion<br>
+            *C Storage Class<br>
+          </span>
+          <li><a href="c array.html">C Programming Arrays</a></li>
+          <span>
+            *C Programming Arrays
+            *C Multi-dimensional Arrays<br>
+            *C Arrays & Function<br>
+          </span>
+          <li><a href="C pointernotes.html">C Programming Pointers</a></li>
+          <span>
+            *C Programming Pointers<br>
+            *C Pointers & Arrays<br>
+            *C Pointers And Functions<br>
+            *C Memory Allocation<br>
+          </span>
+          <li><a href="Strings.html">C Programming Strings</a></li>
+          <span>
+            *C Programming String<br>
+            *C String Functions<br>
+          </span>
+          <li><a href="Structure&Union.html">Structure & Union</a></li>
+          <span>
+            *C Structure<br>
+            *C Struct & Pointers<br>
+            *C Struct & Function<br>
+            *C Unions<br>
+          </span>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section>
+    <span>
+      <h1>C Functions</h1>
+
+
+      C function is a self-contained block of statements that can be executed repeatedly whenever we need it.<br>
+      Benifits of using the Function in C<br>
+      <li>The function provides modularity.</li>
+      <li>The function provides reusable code.</li>
+      <li>In large programs, debugging and editing tasks is easy with the use of functions.</li>
+      <li>The program can be modularized into smaller parts.</li>
+      <li>Separate function independently can be developed according to the needs.</li>
+      <h4>There are two types of Functions in C:</h4><br>
+      <strong>Built-in(Library) Functions</strong>
+      <li>The system provided these functions and stored in the library. Therefore it is also called Library Functions.
+        e.g. scanf(), printf(), strcpy, strlwr, strcmp, strlen, strcat etc.</li>
+      <li>To use these functions, you just need to include the appropriate C header files.</li>
+      <strong>User Defined Functions</strong> These functions are defined by the user at the time of writing the
+      program.
+      <h2>Parts of Function</h2>
+      <li>Function Prototype (function declaration)</li>
+      <li>Function Definition</li>
+      <li>Function Call</li>
+      <h4>1.Function Prototype</h4>
+      Syntax:<br>
+      dataType functionName (Parameter List)<br>
+      Example:<br>
+      int addition();<br>
+      <h4>2.Function Definition</h4>
+      Syntax:<br>
+      <pre>
+        <code class="language-clike" >
+            returnType functionName(Function arguments){
+                //body of the function 
+              }
+        </code>
+        </pre>
+      Example:<br>
+      <pre>
+        <code class="language-clike" >
+            int addition()
+            {
+
+            }
+          </code>
+        </pre>
+      <h4>3.Calling a Function in C</h4>
+      Program to illustrate the Addition of Two Numbers using User Defined Function<br>
+      Example:
+      <pre>
+        <code class="language-clike" >
+            #include<stdio.h>
+
+                /* function declaration */int addition();
+                
+                int main()
+                {   
+                    //local variable definition
+                    int answer;
+                    
+                    answer = addition(); //calling a function to get addition value.
+                    printf("The addition of the two numbers is: %d\n",answer);
+                    return 0;
+                }
+                
+                //function returning the addition of two numbers
+                int addition()
+                {
+                    int num1 = 10, num2 = 5; // local variable definition
+                    return num1+num2;
+                }
+              </code>
+        </pre>
+      Program Output:<br>
+      The addition of two numbers is: 15<br>
+      <h2>C Recursion</h2>
+      C is a powerful programming language having capabilities like an iteration of a set of statements 'n' number of
+      times. The same concepts can be done using functions also. In this chapter, you will be learning about recursion
+      concept and how it can be used in the C program.<br>
+      <h4>What is Recusion</h4>
+      Recursion can be defined as the technique of replicating or doing again an activity in a self-similar way calling
+      itself again and again, and the process continues till specific condition reaches. In the world of programming,
+      when
+      your program lets you call that specific function from inside that function, then this concept of calling the
+      function from itself can be termed as recursion, and the function in which makes this possible is called recursive
+      function.<br>
+      Here's an example of how recursion works in a program:
+      Example:<br>
+      <code class="language-clike">
+      <pre>
+            void rec_prog(void) {
+                rec_prog(); //function calls itself
+              }
+              
+              int main(void) {
+                rec_prog();
+                return 0;
+              }
+        </pre>
+      </code>
+      C program allows you to do such calling of function within another function, i.e., recursion. But when you
+      implement
+      this recursion concept, you have to be cautious in defining an exit or terminating condition from this recursive
+      function, or else it will continue to an infinite loop, so make sure that the condition is set within your
+      program.<br>
+      <h4>Factorial Program in C using Recursion</h4>
+      Example:
+      <pre>
+        <code class="language-clike" >
+            #include<stdio.h>
+                #include<conio.h>
+                
+                int fact(int f) {
+                  if (f==0 || f==1) {
+                    printf("Calculated Factorial");
+                    return 1;
+                  }
+                  return f * fact(f - 1);
+                }
+                
+                int main(void) {
+                  int f = 12;
+                  printf("The factorial of %d is %d \n", f, fact(f));
+                  getch();
+                  return 0;
+                }
+                </code>
+        </pre>
+      Program Output:<br>
+      Calculated Factorial<br>
+      The Factorial of 12 is 479001600<br>
+      <h4>Fibonacci Program in C Using Recursion</h4>
+      Example:
+      <pre>
+        <code class="language-clike" >
+            #include<stdio.h>
+                #include<conio.h>
+                
+                int fibo(int g) {
+                  if (g == 0) {
+                    return 0;
+                  }
+                
+                  if (g == 1) {
+                    return 1;
+                  }
+                  return fibo(g - 1) + fibo(g - 2);
+                }
+                
+                int main(void) {
+                  int g;
+                  printf("Calculated Fibonacci\n");
+                  for (g = 0; g < 10; g++) {
+                    printf("%d \t ", fibo(g));
+                  }
+                  getch();
+                  return 0;
+                }
+              </code>
+        </pre>
+      Program Output:<br>
+      Calculated Fibonacci<br>
+      0 1 1 2 3 5 8 13 21 34<br>
+      <h2>C Storage Classes</h2>
+      Storage Classes are associated with variables for describing the features of any variable or function in the C
+      program. These storage classes deal with features such as scope, lifetime and visibility which helps programmers
+      to
+      define a particular variable during the program's runtime. These storage classes are preceded by the data type
+      which
+      they had to modify.
+      <h4>There are four storage classes types in C:</h4>
+      <li>auto</li>
+      <li>register</li>
+      <li>static</li>
+      <li>extern</li>
+      <h4>auto Storage Class</h4>
+      auto comes by default with all local variables as its storage class. The keyword auto is used to define this
+      storage
+      class explicitly<br>
+      Syntax:<br>
+      <code class="language-clike">int roll;</code> // contains auto by default<br>
+      is the same as:<br>
+      <code class="language-clike"> auto int roll; </code>// in addition, we can use auto keyword<br>
+      The above example has a variable name roll with auto as a storage class. This storage class can only be
+      implemented
+      with the local variables.
+      <h4>register Storage Class</h4>
+      This storage class is implemented for classifying local variables whose value needs to be saved in a register in
+      place of RAM (Random Access Memory). This is implemented when you want your variable the maximum size equivalent
+      to
+      the size of the register. It uses the keyword register.
+      Syntax:<br>
+      <code class="language-clike">register int counter;</code> <br>
+      Register variables are used when implementing looping in counter variables to make program execution fast.
+      Register
+      variables work faster than variables stored in RAM (primary memory).<br>
+      Example:
+      <pre>
+        <code class="language-clike">
+            for(register int counter=0; counter<=9; counter++)
+            {
+            // loop body
+            }
+          </code>
+        </pre>
+      <h4>static storage class</h4>
+      This storage class uses static variables that are used popularly for writing programs in C language. Static
+      variables preserve the value of a variable even when the scope limit exceeds. Static storage class has its scope
+      local to the function in which it is defined.<br>
+      On the other hand, global static variables can be accessed in any part of your program. The default value assigned
+      is '0' by the C compiler. The keyword used to define this storage class is static.<br>
+      Example:<br>
+      static int var = 6;<br>
+      <h4>extern Storage Class</h4>
+      The extern storage class is used to feature a variable to be used from within different blocks of the same
+      program.
+      Mainly, a value is set to that variable which is in a different block or function and can be overwritten or
+      altered
+      from within another block as well. Hence it can be said that an extern variable is a global variable which is
+      assigned with a value that can be accessed and used within the entire program. Moreover, a global variable can be
+      explicitly made an extern variable by implementing the keyword 'extern' preceded the variable name.<br>
+      Here are some examples of extern:<br>
+      Example:<br>
+      <pre>
+        <code class="language-clike">
+            #include <stdio.h>
+
+                int val;
+                extern void funcExtern();
+                 
+                main() 
+                {
+                   val = 10;
+                   funcExtern();
+                }
+              </code>
+        </pre>
+      Another example:<br>
+      <pre>
+        <code class="language-clike">
+        #include <stdio.h>
+
+            extern int val; // now the variable val can be accessed and used from anywhere
+            
+            // within the program
+            void funcExtern() 
+            {
+               printf("Value is: %d\n", val);
+              </code>
+            </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </span>
+  </section>
+  <script>
+    function solutionClicked(e) {
+      if (e.target.parentNode.querySelector(".solution").style.display == "block") {
+        e.target.parentNode.querySelector(".solution").style.display = "none";
+        e.target.textContent = "Show Solution";
+      } else {
+        e.target.parentNode.querySelector(".solution").style.display = "block";
+        e.target.textContent = "Hide";
+
+      }
+    }
+  </script>
+  <script src="./js/prism.js"></script>
+</body>
+
+</html>

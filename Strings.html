@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/questions.css">
+    <link href="./css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar btn">
+            <ul>
+                <li><strong>C Programming</strong></li>
+                <li><a href="CIntro.html">C Introduction</a></li>
+                <span> *Keywords & Identifiers<br>
+                    *Variables & Constants<br>
+                    *C Data Types<br>
+                    *C Input/Output<br>
+                    *C Operators<br>
+                </span>
+                <li><a href="flowcontrol.html">C Flow Control</a></li>
+                <span>
+                    *C if...else<br>
+                    *C for Loop<br>
+                    *C while Loop<br>
+                    *C break and continue<br>
+                    *C switch...case<br>
+                    *C Programming goto<br>
+                    </p>
+                    <li><a href="C Functions.html">C Functions</a></li>
+                    <span>
+                        *C Programming Functions<br>
+                        *C User-defined Functions<br>
+                        *C Function Types<br>
+                        *C Recursion<br>
+                        *C Storage Class<br>
+                    </span>
+                    <li><a href="c array.html">C Programming Arrays</a></li>
+                    <span>
+                        *C Programming Arrays
+                        *C Multi-dimensional Arrays<br>
+                        *C Arrays & Function<br>
+                    </span>
+                    <li><a href="C pointernotes.html">C Programming Pointers</a></li>
+                    <span>
+                        *C Programming Pointers<br>
+                        *C Pointers & Arrays<br>
+                        *C Pointers And Functions<br>
+                        *C Memory Allocation<br>
+                    </span>
+                    <li><a href="Strings.html">C Programming Strings</a></li>
+                    <span>
+                        *C Programming String<br>
+                        *C String Functions<br>
+                    </span>
+                    <li><a href="Structure&Union.html">Structure & Union</a></li>
+                    <span>
+                        *C Structure<br>
+                        *C Struct & Pointers<br>
+                        *C Struct & Function<br>
+                        *C Unions<br>
+                    </span>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <span>
+            <h1>C Strings</h1>
+            <h2>Strings</h2>
+            In C programming, the one-dimensional array of characters are called strings, which is terminated by a null
+            character '\0'.<br>
+            <h2>String Decleration</h2>
+            <h3>There are two ways to declare a string in C programming:<br></h3>
+            <h4>1. Through an array of characters.<br></h4>
+            Example:
+            <pre>
+                <code class="language-clike">
+            char name[6];
+        </code>
+        </pre>
+            <h4>2. Through pointers.<br></h4>
+            Example:
+            <pre>
+                <code class="language-clike">
+                
+            char *name;
+        </code>
+        </pre>
+            <h2>String Initialization</h2>
+            <h3>There are two ways to initialize a string in C programming:<br></h3>
+            <h4>1. Arrays<br></h4>
+            Example:<br>
+            <pre>
+                <code class="language-clike">
+            char name[6] = {'C', 'l', 'o', 'u', 'd', '\0'};
+        </code>
+        </pre>
+            <h4>2. Pointers<br></h4>
+            Example:<br>
+            <pre>
+                <code class="language-clike">
+            char name[] = "Cloud";
+        </code>
+        </pre>
+            <h3>Repersentation Of String<br></h3>
+            <pre>
+                <code class="language-clike">
+            #include<stdio.h>
+
+                int main ()
+                {
+                   char name[6] = {'C', 'l', 'o', 'u', 'd', '\0'};
+                
+                   printf("Tutorials%s\n", name );
+                
+                   return 0;
+                }
+            </code>
+        </pre>
+            Program Output:<br>
+            TutorialsCloud
+            <h2>C String Functions</h2>
+            There are many important string functions defined in "string.h" library.<br>
+
+            <li><strong>strlen(string_name)</strong></li>
+            returns the length of string name.
+            <li><strong>strcpy(destination, source)</strong></li>
+            copies the contents of source string to destination string.
+            <li><strong>strcat(first_string, second_string)</strong></li>
+            concats or joins first string with second string. The result of the string is stored in first string.
+            <li><strong>strcmp(first_string, second_string)</strong></li>
+            compares the first string with second string. If both strings are same, it returns 0.
+            <li><strong>strrev(string)</strong></li>
+            returns reverse string.
+            <li><strong>strlwr(string)</strong></li>
+            returns string characters in lowercase.
+            <Li><strong>strupr(string)</strong></Li>
+            returns string characters in uppercase.
+        </span>
+    </section>
+    <script>
+        function solutionClicked(e) {
+            if (e.target.parentNode.querySelector(".solution").style.display == "block") {
+                e.target.parentNode.querySelector(".solution").style.display = "none";
+                e.target.textContent = "Show Solution";
+            } else {
+                e.target.parentNode.querySelector(".solution").style.display = "block";
+                e.target.textContent = "Hide";
+
+            }
+        }
+    </script>
+    <script src="./js/prism.js"></script>
+</body>
+
+</html>

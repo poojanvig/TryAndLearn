@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial=scale=1.0">
+  <title>C Introduction</title>
+  <link rel="stylesheet" href="css/content.css">
+  <link rel="stylesheet" href="css/questions.css">
+  <link href="./css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar btn">
+      <ul>
+        <li><strong>C Programming</strong></li>
+        <li><a href="CIntro.html">C Introduction</a></li>
+        <span> *Keywords & Identifiers<br>
+          *Variables & Constants<br>
+          *C Data Types<br>
+          *C Input/Output<br>
+          *C Operators<br>
+        </span>
+        <li><a href="flowcontrol.html">C Flow Control</a></li>
+        <span>
+          *C if...else<br>
+          *C for Loop<br>
+          *C while Loop<br>
+          *C break and continue<br>
+          *C switch...case<br>
+          *C Programming goto<br>
+          </p>
+          <li><a href="C Functions.html">C Functions</a></li>
+          <span>
+            *C Programming Functions<br>
+            *C User-defined Functions<br>
+            *C Function Types<br>
+            *C Recursion<br>
+            *C Storage Class<br>
+          </span>
+          <li><a href="c array.html">C Programming Arrays</a></li>
+          <span>
+            *C Programming Arrays
+            *C Multi-dimensional Arrays<br>
+            *C Arrays & Function<br>
+          </span>
+          <li><a href="C pointernotes.html">C Programming Pointers</a></li>
+          <span>
+            *C Programming Pointers<br>
+            *C Pointers & Arrays<br>
+            *C Pointers And Functions<br>
+            *C Memory Allocation<br>
+          </span>
+          <li><a href="Strings.html">C Programming Strings</a></li>
+          <span>
+            *C Programming String<br>
+            *C String Functions<br>
+          </span>
+          <li><a href="Structure&Union.html">Structure & Union</a></li>
+          <span>
+            *C Structure<br>
+            *C Struct & Pointers<br>
+            *C Struct & Function<br>
+            *C Unions<br>
+          </span>
+      </ul>
+    </nav>
+
+
+  </header>
+  <section>
+    <h1>C Intoduction</h1>
+    <p>C language was invented in 1972 and is one of the oldest programming language</p>
+    <p><strong>Features:-</strong><br>
+      1. C is a structured language i.e. it programs can be divided in multiple parts which makes it easy to understand
+      and write.<br>
+      2. Easy & Effective<br>
+      Efficient & fast programs against other languages<br>
+      3. Can be used to program computer to work efficiently.<br>
+    </p>
+    <li><strong>Where to use C language:-</strong></li><br>
+    <p>
+      1. Creating Desktop applications.<br>
+      2. Developing Games.<br>
+      3. Designing Operating System.<br>
+      4. Designing Compilers.<br>
+    </p>
+    <li><strong>Working of C</strong><br></li>
+    <strong>Writing source code</strong><br>
+    Writing source code for desired project using text editing tool<br>
+    <strong>Compiling source code</strong><br>
+    Converting source code to machine instructions so as computer can understand<br>
+    <strong>Error detection</strong><br>
+    Checking code for all possible errors<br>
+    <strong>Linking</strong><br>
+    Linking code with other files of code as sometimes it because putting all codes in one file becomes difficult<br>
+    <strong>Checking errors</strong><br>
+    Again errors are rectified <br>
+    <strong>Execution</strong><br>
+    Code is executed to get desired output
+    <h2><strong>Keywords & Identifiers</strong></h2>
+    <span>
+      <h3>keywords</h3>
+      Keywords are predefined, reserved words used in programming that have special meanings to the compiler. Keywords
+      are
+      part of the syntax and they cannot be used as an identifier.<br>
+      Example :
+      <code><pre><code class="language-clike">
+            #include<stdio.h>
+
+                int main()
+                {
+                    float a, b;
+                    printf("Showing how keywords are used.");
+                    return 0;
+                }</code>
+      </pre>
+
+      In the above program, float and return are keywords. The float is used to declare variables, and return is used to
+      return an integer type value in this program.<br>
+      A list of 32 reserved keywords in c language is given below:
+
+      <table style="width:100%">
+        <tr>
+          <td>auto</td>
+          <td>double</td>
+          <td>int</td>
+          <td>struct</td>
+        </tr>
+        <tr>
+          <td>break</td>
+          <td>else</td>
+          <td>long</td>
+          <td>switch</td>
+        </tr>
+        <tr>
+          <td>case</td>
+          <td>enum</td>
+          <td>register</td>
+          <td>typedef</td>
+        </tr>
+        <tr>
+          <td>char</td>
+          <td>extern</td>
+          <td>return</td>
+          <td>union</td>
+        </tr>
+        <tr>
+          <td>const</td>
+          <td>float</td>
+          <td>short</td>
+          <td>unsigned</td>
+        </tr>
+        <tr>
+          <td>continue</td>
+          <td>for</td>
+          <td>signed</td>
+          <td>void</td>
+        </tr>
+        <tr>
+          <td>default</td>
+          <td>goto</td>
+          <td>sizeof</td>
+          <td>volatile</td>
+        </tr>
+        <tr>
+          <td>do</td>
+          <td>if</td>
+          <td>static</td>
+          <td>while</td>
+        </tr>
+      </table>
+      <h3>Identifiers</h3>
+      Identifier refers to name given to entities such as variables, functions, structures etc. Identifiers must be
+      unique. They are created to give a unique name to an entity to identify it during the execution of the
+      program.<br>
+      Example:
+      <pre> <code class="language-clike">
+            int amount;
+
+            double totalbalance;</code>
+            </pre>
+      In the above example, amount and totalbalance are identifiers and int, and double are keywords.
+      <h3>Rules for Naming Identifiers</h3>
+      <li>An identifier can only have alphanumeric characters (a-z , A-Z , 0-9) (i.e. letters & digits) and underscore(
+        _
+        ) symbol.</li>
+      <li>Identifier names must be unique</li>
+      <li>The first character must be an alphabet or underscore.</li>
+      <li>You cannot use a keyword as identifiers</li>
+      <li>Only the first thirty-one (31) characters are significant.</li>
+      <li>It must not contain white spaces.</li>
+      <li>Identifiers are case-sensitive.</li>
+      <h2>Variables & Constants</h2>
+      <h3>Variables</h3>
+      In programming, a variable is a container (storage area) to hold data.<br>
+      To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just
+      the
+      symbolic representation of a memory location. <br>
+      Example:
+      <pre> <code class="language-clike">
+            int playerScore = 95;</code>
+            </pre>
+      Here, playerScore is a variable of int type. Here, the variable is assigned an integer value 95.
+      <h3>Rules for naming a variable</h3>
+      <li>A variable name can only have letters (both uppercase and lowercase letters), digits and underscore.</li>
+      <li>The first letter of a variable should be either a letter or an underscore.</li>
+      <li>There is no rule on how long a variable name (identifier) can be. However, you may run into problems in some
+        compilers if the variable name is longer than 31 characters.</li>
+      <h2>Constants</h2>
+      C Constants is the most fundamental and essential part of the C programming language. Constants in C are the fixed
+      values that are used in a program, and its value remains the same during the entire execution of the program.<br>
+      <li>Constants are also called literals.</li>
+      <li>Constants can be any of the data types.</li>
+      <li>It is considered best practice to define constants using only upper-case names.</li>
+      Example:
+      <pre> <code class="language-clike">
+                const double PI = 3.14;  </code>
+            </pre>
+      Notice, we have added keyword const.
+      Here, PI is a symbolic constant; its value cannot be changed.
+      <h2>C Data Types</h2>
+      The data-type in a programming language is the collection of data with values having fixed meaning as well as
+      characteristics. Some of them are an integer, floating point, character, etc. Usually, programming languages
+      specify
+      the range values for given data-type.
+      <h3>C Data Types are used to:</h3>
+      <li>Identify the type of a variable when it declared.</li>
+      <li>Identify the type of the return value of a function.</li>
+      <li>Identify the type of a parameter expected by a function.</li>
+      <h3>C provides three types of data types:</h3>
+      <li>Primary(Built-in) Data Types:<br>
+        void, int, char, double and float.</li>
+      <li>Derived Data Types:<br>
+        Array, References, and Pointers.</li>
+      <li>User Defined Data Types:<br>
+        Structure, Union, and Enumeration.</li>
+      <h3>Primary Data Types</h3>
+      Every C compiler supports five primary data types:
+      <table style="width:100%">
+        <tr>
+          <td>void</td>
+          <td>As the name suggests, it holds no value and is generally used for specifying the type of function or what
+            it
+            returns. If the function has a void type, it means that the function will not return any value.</td>
+        </tr>
+        <tr>
+          <td>int</td>
+          <td>Used to denote an integer type.</td>
+        </tr>
+        <tr>
+          <td>char</td>
+          <td>Used to denote a character type.</td>
+        </tr>
+        <tr>
+          <td>float, double</td>
+          <td>Used to denote a floating point type.</td>
+        </tr>
+        <tr>
+          <td>int *, float *, char *</td>
+          <td>Used to denote a pointer type.</td>
+        </tr>
+      </table>
+      <h3>Derived Data Types</h3>
+      C supports three derived data types:
+      <table style="width:100%">
+        <tr>
+          <td>Arrays</td>
+          <td>Arrays are sequences of data items having homogeneous values. They have adjacent memory locations to store
+            values.</td>
+        </tr>
+        <tr>
+          <td>References</td>
+          <td>Function pointers allow referencing functions with a particular signature.</td>
+        </tr>
+        <tr>
+          <td>Pointers</td>
+          <td>These are powerful C features which are used to access the memory and deal with their addresses.</td>
+        </tr>
+      </table>
+      <h3>User Defined Data Types</h3>
+      C allows the feature called type definition which allows programmers to define their identifier that would
+      represent
+      an existing data type.<br>
+      There are three such types:
+      <table style="width:100%">
+        <tr>
+          <td>Structure</td>
+          <td>It is a package of variables of different types under a single name. This is done to handle data
+            efficiently. "struct" keyword is used to define a structure.</td>
+        </tr>
+        <tr>
+          <td>Union</td>
+          <td>These allow storing various data types in the same memory location. Programmers can define a union with
+            different members, but only a single member can contain a value at a given time.</td>
+        </tr>
+        <tr>
+          <td>Enum</td>
+          <td>Enumeration is a special data type that consists of integral constants, and each of them is assigned with
+            a
+            specific name. "enum" keyword is used to define the enumerated data type.</td>
+        </tr>
+      </table>
+      <h2>Operators</h2>
+      C operators are symbols that are used to perform mathematical or logical manipulations. The C programming language
+      is rich with built-in operators. Operators take part in a program for manipulating data and variables and form a
+      part of the mathematical or logical expressions.
+      <h3>Arithmetic Operators</h3>
+      Arithmetic Operators are used to performing mathematical calculations like addition (+), subtraction (-),
+      multiplication (*), division (/) and modulus (%).
+      <table>
+        <tr>
+          <th> Operator</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>Addition</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>Subtraction</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>Multiplication</td>
+        </tr>
+        <tr>
+          <td>/</td>
+          <td>Division</td>
+        </tr>
+        <tr>
+          <td>%</td>
+          <td>Modulus</td>
+        </tr>
+      </table>
+      <h3>Increment and Decrement Operators</h3>
+      Increment and Decrement Operators are useful operators generally used to minimize the calculation, i.e. ++x and
+      x++
+      means x=x+1 or -x and x−−means x=x-1. But there is a slight difference between ++ or −− written before or after
+      the
+      operand. Applying the pre-increment first add one to the operand and then the result is assigned to the variable
+      on
+      the left whereas post-increment first assigns the value to the variable on the left and then increment the
+      operand.
+      <table>
+        <tr>
+          <th> Operator</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>++</td>
+          <td>Increment</td>
+        </tr>
+        <tr>
+          <td>--</td>
+          <td>Decrement</td>
+        </tr>
+      </table>
+      <h3>Relational Operators</h3>
+      Relational operators are used to comparing two quantities or values.
+      <table>
+        <tr>
+          <th> Operator</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>==</td>
+          <td>Is equal to</td>
+        </tr>
+        <tr>
+          <td>!=</td>
+          <td>Is not equal to</td>
+        </tr>
+        <tr>
+          <td>></td>
+          <td>Greater than</td>
+        </tr>
+        <tr>
+          <td>
+            < </td>
+          <td>Less than</td>
+        </tr>
+        <tr>
+          <td>>=</td>
+          <td>Greater than or equal to</td>
+        </tr>
+        <tr>
+          <td>
+            <=< /td>
+          <td>Less than or equal to</td>
+        </tr>
+      </table>
+      <h3>Logical Operators</h3>
+      C provides three logical operators when we test more than one condition to make decisions. These are: && (meaning
+      logical AND), || (meaning logical OR) and ! (meaning logical NOT).
+      <table>
+        <tr>
+          <th> Operator</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>&&</td>
+          <td>And operator. It performs logical conjunction of two expressions. (if both expressions evaluate to True,
+            result is True. If either expression evaluates to False, the result is False)</td>
+        </tr>
+        <tr>
+          <td>||</td>
+          <td>Or operator. It performs a logical disjunction on two expressions. (if either or both expressions evaluate
+            to True, the result is True)</td>
+        </tr>
+        <tr>
+          <td>!</td>
+          <td>Not operator. It performs logical negation on an expression.</td>
+        </tr>
+      </table>
+      <h3>Bitwise Operators</h3>
+      C provides a special operator for bit operation between two variables.
+      <table>
+        <tr>
+          <th> Operator</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+            <<< /td>
+          <td>Binary Left Shift Operator</td>
+        </tr>
+        <tr>
+          <td>>></td>
+          <td> Binary Right Shift Operator</td>
+        </tr>
+        <tr>
+          <td>~</td>
+          <td>Binary Ones Complement Operator</td>
+        </tr>
+        <tr>
+          <td>&</td>
+          <td>Binary AND Operator</td>
+        </tr>
+        <tr>
+          <td>^</td>
+          <td>Binary XOR Operator</td>
+        </tr>
+        <tr>
+          <td>|</td>
+          <td>Binary OR Operator
+          </td>
+        </tr>
+      </table>
+      <h3>Assignment Operators</h3>
+      Assignment operators applied to assign the result of an expression to a variable. C has a collection of shorthand
+      assignment operators.
+      <table>
+        <tr>
+          <th> Operator</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>Assign</td>
+        </tr>
+        <tr>
+          <td>+=</td>
+          <td>Increments then assign</td>
+        </tr>
+        <tr>
+          <td>-=</td>
+          <td>Multiplies then assign</td>
+        </tr>
+        <tr>
+          <td>*=</td>
+          <td>Binary AND Operator</td>
+        </tr>
+        <tr>
+          <td>/=</td>
+          <td>Divides then assign</td>
+        </tr>
+        <tr>
+          <td>%=</td>
+          <td>Modulus then assign</td>
+        </tr>
+        <tr>
+          <td>
+            <<=< /td>
+          <td>Left shift and assign</td>
+        </tr>
+        <tr>
+          <td>>>=</td>
+          <td>Right shift and assign</td>
+        </tr>
+        <tr>
+          <td>&=</td>
+          <td>Bitwise AND assign</td>
+        </tr>
+        <tr>
+          <td>^=</td>
+          <td>Bitwise exclusive OR and assign</td>
+        </tr>
+        <tr>
+          <td>|=</td>
+          <td>Bitwise inclusive OR and assign</td>
+        </tr>
+      </table>
+      <h3>Conditional Operators</h3>
+      C offers a ternary operator which is the conditional operator (?: in combination) to construct conditional
+      expressions.
+      <table>
+        <tr>
+          <th> Operator</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>? :</td>
+          <td>Conditional Expression</td>
+        </tr>
+
+      </table>
+
+
+    </span>
+    </p>
+    <br>
+    <hr>
+  </section>
+  <script src="./js/prism.js"></script>
+</body>
+
+</html>

@@ -124,14 +124,16 @@ nav .menu-btn {
 }
 /********** Drop down **********/
 .lang-list {
-  display: flex;
+  display: flexbox;
   position: absolute;
   flex-direction: column;
-  /* padding:20px */
+  padding: 20px;
   padding-top: 45px;
-  margin-left: -15px;
+  margin-left: -20px;
+
   width: 200px;
   display: none;
+  /* background-color: #24252a; */
 }
 nav ul li:hover .lang-list {
   display: flex;

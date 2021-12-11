@@ -10,27 +10,26 @@
 </head>
 
 <body>
-    <div class="home-box custom-box hide">
-        <p>Total number of questions: <span class="total-questions">5</span></p>
-        <button type="button" class="btn">Start </button>
+    <div class="home-box custom-box ">
+        <p>Total number of questions: <span class="total-questions">4</span></p>
+        <button type="button" class="btn" onclick="startQuiz()">Start </button>
     </div>
 
-    <div class="quize-box custom-box">
-        <div class="question-number">Question 1</div>
+    <div class="quiz-box custom-box hide">
+        <div class="question-number"> </div>
 
-        <div class="question-text">Guess the output
-            int main() { int a = 5; int b = 10; { int a = 2; a++; b++; } printf("%d %d", a, b); return 0; }</div>
+        <div class="question-text">
+
+        </div>
 
         <div class="Option-container">
-            <div class="option">6,11</div>
-            <div class="option">11,6</div>
-            <div class="option">6,10</div>
-            <div class="option">5,11</div>
+
         </div>
 
-        <div class="Next-question-button">
-            <button type="button" class="btn">NEXT</button>
+        <div class="next-question-btn">
+            <button type="button" class="btn" onclick="next()">NEXT</button>
         </div>
+
     </div>
 
     <div class="result-box custom-box hide">
@@ -38,31 +37,32 @@
         <table>
             <tr>
                 <td>Total Questions</td>
-                <td><span class="total-questions">5</span></td>
+                <td><span class="total-questions"></span></td>
             </tr>
             <tr>
                 <td>Attemps</td>
-                <td><span class="total-attemps">4</span></td>
+                <td><span class="total-attemps"></span></td>
             </tr>
             <tr>
                 <td>correct</td>
-                <td><span class="total-correct">3</span></td>
+                <td><span class="total-correct"></span></td>
             </tr>
             <tr>
                 <td>Wrong</td>
-                <td><span class="total-wrong">2</span></td>
+                <td><span class="total-wrong"></span></td>
             </tr>
             <tr>
                 <td>Score</td>
-                <td><span class="total-score">4</span></td>
+                <td><span class="total-score"></span></td>
             </tr>
         </table>
-        <button type="button" class="btn"> Try Again </button>
-        <button type="button" class="btn"> <a href="">go to Home</a> </button>
+        <button type="button" class="btn" onclick="tryAgain()"> Try Again </button>
+        <button type="button" class="btn" onclick="backToHome()"> <a href="/index.html">go to Home</a> </button>
     </div>
 
 
     <script src="quiz.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

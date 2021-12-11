@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Flow Control</title>
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/questions.css">
+    <link href="./css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar btn">
+            <ul>
+                <li><strong>C Programming</strong></li>
+                <li><a href="CIntro.html">C Introduction</a></li>
+                <span> *Keywords & Identifiers<br>
+                    *Variables & Constants<br>
+                    *C Data Types<br>
+                    *C Input/Output<br>
+                    *C Operators<br>
+                </span>
+                <li><a href="flowcontrol.html">C Flow Control</a></li>
+                <span>
+                    *C if...else<br>
+                    *C for Loop<br>
+                    *C while Loop<br>
+                    *C break and continue<br>
+                    *C switch...case<br>
+                    *C Programming goto<br>
+                    </p>
+                    <li><a href="C Functions.html">C Functions</a></li>
+                    <span>
+                        *C Programming Functions<br>
+                        *C User-defined Functions<br>
+                        *C Function Types<br>
+                        *C Recursion<br>
+                        *C Storage Class<br>
+                    </span>
+                    <li><a href="c array.html">C Programming Arrays</a></li>
+                    <span>
+                        *C Programming Arrays
+                        *C Multi-dimensional Arrays<br>
+                        *C Arrays & Function<br>
+                    </span>
+                    <li><a href="C pointernotes.html">C Programming Pointers</a></li>
+                    <span>
+                        *C Programming Pointers<br>
+                        *C Pointers & Arrays<br>
+                        *C Pointers And Functions<br>
+                        *C Memory Allocation<br>
+                    </span>
+                    <li><a href="Strings.html">C Programming Strings</a></li>
+                    <span>
+                        *C Programming String<br>
+                        *C String Functions<br>
+                    </span>
+                    <li><a href="Structure&Union.html">Structure & Union</a></li>
+                    <span>
+                        *C Structure<br>
+                        *C Struct & Pointers<br>
+                        *C Struct & Function<br>
+                        *C Unions<br>
+                    </span>
+            </ul>
+        </nav>
+
+
+    </header>
+    <section>
+        <h1>C Flow Controls</h1>
+        <span>
+            <h2>C if Statement</h2>
+            If statements in C is used to control the program flow based on some condition, it's used to execute some
+            statement code block if th expression is evaluated to true. Otherwise, it will get skipped. This is the
+            simplest
+            way to modify the control flow of the program.<br>
+            The if statement in C can be used in various forms depending on the situation and complexity.
+            <h3>There are four different types of if statement in C. These are:</h3>
+            <li>Simple if Statement</li>
+            <li>if-else Statement</li>
+            <li>Nested if-else Statement</li>
+            <li>else-if Ladder</li>
+            The basic format of if statement is:
+            Syntax:
+            <pre><code class="language-clike">
+            if(test_expression)
+            {
+                statement 1;
+                statement 2;
+                ...
+            }  </code>
+        </pre>
+            'Statement n' can be a statement or a set of statements, and if the test expression is evaluated to true,
+            the
+            statement block will get executed, or it will get skipped.
+            Figure - Flowchart of if Statement:
+            <img src="file:///D:/Desktop/c-if.webp">
+            Example for a C Program to Demonstarte if Statement
+            Example:1
+            <pre><code class="language-clike">
+            #include<stdio.h>
+
+                void main()
+                {
+                  int a = 15, b = 20;
+                
+                  if (b > a) {  
+                    printf("b is greater");
+                  }
+                }
+                </code>
+        </pre>
+            Program Output:<br>
+            b is greater
+            Example:2
+            <pre><code class="language-clike">
+            #include<stdio.h>
+
+                void main()
+                {
+                  int number;
+                  printf("Type a number:");
+                  scanf("%d", &number);
+                
+                  if (number < 0) { // check whether the number is negative number.
+                    number = -number; // If it is a negative then convert it into positive.
+                    printf("The absolute value is %d\n", number);
+                  }
+                }   </code>
+        </pre>
+            Program Output:<br>
+            Type a number :-2<br>
+            The ansolute value is 2
+            <h2>C if-else Statement</h2>
+            If else statements in C is also used to control the program flow based on some condition, only the
+            difference
+            is: it's used to execute some statement code block if the expression is evaluated to true, otherwise
+            executes
+            else statement code block.<br>
+            The basic format of if else statement is:<br>
+            Syntax:
+            <pre><code class="language-clike">
+            if(test_expression)
+            {
+               //execute your code
+            }
+            else
+            {
+               //execute your code
+            } </code>
+        </pre>
+            Figure - Flowchart of if-else Statement:<br>
+            <img src="file:///D:/Desktop/c-if-else.webp"><br>
+            Example for a C Program to Demonstrate if-else Statement.<br>
+            Example:1
+            <pre><code class="language-clike">
+             #include<stdio.h>
+
+            void main()
+            {
+              int a, b;
+            
+              printf("Please enter the value for a:");
+              scanf("%d", &a);
+            
+              printf("\nPlease the value for b:");
+              scanf("%d", &b);
+            
+              if (a > b) {  
+                printf("\n a is greater");
+              } else {  
+                printf("\n b is greater");
+              }
+            }</code>
+        </pre>
+            Program Output:<br>
+            Please enter the value for a:10<br>
+            Please enter the value for b:5<br>
+            a is greater<br>
+            Example:2
+            <pre><code class="language-clike">
+        #include<stdio.h>
+
+            void main() {
+              int num;
+              printf("Enter the number:");
+              scanf("%d", &num);
+            
+              /* check whether the number is negative number */  if (num < 0)
+                printf("The number is negative.");
+              else
+                printf("The number is positive."); 
+            }</code>
+        </pre>
+            Program Output:<br>
+            Enter the number:3<br>
+            The number is positive.<br>
+            <h2>C Nested if-else Statements</h2>
+            Nested if else statements play an important role in C programming, it means you can use conditional
+            statements
+            inside another conditional statement.<br>
+            The basic format of Nested if else statement is:<br>
+            Syntax:
+            <pre><code class="language-clike">
+            if(test_expression one)
+            {
+                if(test_expression two) {
+                   //Statement block Executes when the boolean test expression two is true.
+                }
+            }
+            else
+            {
+               //else statement block
+            }            </code>
+        </pre>
+            Example for a C Program to Demonstrate Nested if-else Statement.<br>
+            Example:1
+            <pre><code class="language-clike">
+        #include<stdio.h>
+
+            void main()
+            {
+            int x=20,y=30;
+            
+                if(x==20)
+                {
+                    if(y==30)
+                    {
+                        printf("value of x is 20, and value of y is 30.");
+                    }
+                }
+            }</code>
+        </pre><code class="language-clike">
+            Program Output: <br>
+            value of x is 20, and value of y is 30.<br>
+            <h2>C for Loop</h2>
+            A for loop is a repetition control structure which allows us to write a loop that is executed a specific
+            number
+            of times. The loop enables us to perform n number of steps together in one line.<br>
+            The basic format of for loop statement is:<br>
+            Syntax:<br>
+            <pre>
+            for ( init; condition; increment )
+            {
+                 statement(s);
+            } </code>
+            </pre>
+            <img src="file:///D:/Desktop/c-for.webp"><br>
+            Example of a C Program to Demonstarte for loop<br>
+            Example:1
+            <pre><code class="language-clike">
+            #include<stdio.h> 
+ 
+                int main ()
+                {
+                  /* local variable Initialization */  int n,times=5;;
+                    
+                   /* for loops execution */   for( n = 1; n <= times; n = n + 1 )
+                   {
+                      printf("C for loops: %d\n", n);
+                   }
+                 
+                   return 0;
+                }</code>
+        </pre>
+            Program Output:<br>
+            C for loops : 1<br>
+            C for loops : 2<br>
+            C for loops : 3<br>
+            C for loops : 4<br>
+            C for loops : 5<br>
+            <h2>C while loops</h2>
+            C while loops statement allows to repeatedly run the same block of code until a condition is met.<br>
+            while loop is a most basic loop in C programming. while loop has one control condition, and executes as long
+            the
+            condition is true. The condition of the loop is tested before the body of the loop is executed, hence it is
+            called an entry-controlled loop.<br>
+            The basic format of while loop statement is:<br>
+            Syntax:
+            <pre>
+            While (condition)
+            {
+                statement(s);
+               Incrementation;
+            }
+        </pre>
+            Figure - Flowchart of while loop:<br>
+            <img src="file:///D:/Desktop/c-while.webp"><br>
+            Example of a C Program to Demonstarte while loop<br>
+            Example:1<br>
+            <pre><code class="language-clike">
+            #include<stdio.h>
+ 
+                int main ()
+                {
+                   /* local variable Initialization */   int n = 1,times=5;
+                
+                   /* while loops execution */   while( n <= times )
+                   {
+                      printf("C while loops: %d\n", n);
+                      n++;
+                   }
+                 
+                   return 0;
+                }</code>
+        </pre>
+            Program Output:<br>
+            C while loops: 1<br>
+            C while loops: 2<br>
+            C while loops: 3<br>
+            C while loops: 4<br>
+            C while loops: 5<br>
+            <h2>C do while loops</h2>
+            C do while loops are very similar to the while loops, but it always executes the code block at least once
+            and
+            furthermore as long as the condition remains true. This is an exit-controlled loop.<br>
+            The basic format of do while loop statement is:<br>
+            Syntax:<br>
+            <pre><code class="language-clike">
+            do
+            {
+               statement(s);
+
+            }while( condition );</code>
+        </pre>
+            Figure - Flowchart of do while loop:<br>
+            <img src="file:///D:/Desktop/c-do-while.webp"><br>
+            Examples of a C Program to Demonstarte do while loop<br>
+            Example:<br>
+            <pre><code class="language-clike">
+            #include<stdio.h>
+ 
+                int main ()
+                {
+                   /* local variable Initialization */   int n = 1,times=5;
+                
+                   /* do loops execution */   do
+                   {
+                       printf("C do while loops: %d\n", n);
+                       n = n + 1;
+                   }while( n <= times );
+                 
+                   return 0;
+                }</code>
+        </pre>
+            Program Output:<br>
+            C do while loops: 1<br>
+            C do while loops: 2<br>
+            C do while loops: 3<br>
+            C do while loops: 4<br>
+            C do while loops: 5<br>
+            <h2>C switch Statements</h2>
+            C switch statement is used when you have multiple possibilities for the if statement. Switch case will allow
+            you
+            to choose from multiple options. When we compare it to a general electric switchboard, you will have many
+            switches in the switchboard but you will only select the required switch, similarly, the switch case allows
+            you
+            to set the necessary statements for the user.<br>
+            The basic format of the switch statement is:<br>
+            Syntax:<br>
+            <pre><code class="language-clike">
+            switch(variable)
+            {
+            case 1:
+               //execute your code
+            break;
+            
+            case n:
+               //execute your code
+            break;
+            
+            default:
+               //execute your code
+            break;
+            } </code>
+        </pre>
+            After the end of each block it is necessary to insert a break statement because if the programmers do not
+            use
+            the break statement, all consecutive blocks of codes will get executed from every case onwards after
+            matching
+            the case block.<br>
+            Example of C Program to Demonstarte Switch Statement.<br>
+            Example:
+            <pre><code class="language-clike">
+            #include<stdio.h>
+
+                void main()
+                {
+                    int a;
+                    printf("Please enter a no between 1 and 5: ");
+                    scanf("%d",&a);
+                    
+                    switch(a)
+                    {
+                    case 1:
+                    printf("You chose One");
+                    break;
+                    
+                    case 2:
+                    printf("You chose Two");
+                    break;
+                
+                    case 3:
+                    printf("You chose Three");
+                    break;
+                
+                    case 4:
+                    printf("You chose Four");
+                    break;
+                
+                    case 5:
+                    printf("You chose Five.");
+                    break;
+                
+                    default :
+                    printf("Invalid Choice. Enter a no between 1 and 5");
+                    break;
+                    }
+                
+                }</code>
+        </pre>
+            Program Output:<br>
+            Please enter a no between 1 and 5 : 3<br>
+            you chose Three<br>
+            When none of the cases is evaluated to true, the default case will be executed, and break statement is not
+            required for default statement.
+            <h2></h2>
+        </span>
+    </section>
+    <script src="./js/prism.js"></script>
+</body>
+
+</html>

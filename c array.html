@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Array</title>
+  <link rel="stylesheet" href="css/content.css">
+  <link rel="stylesheet" href="css/questions.css">
+  <link href="./css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar btn">
+      <ul>
+        <li><strong>C Programming</strong></li>
+        <li><a href="CIntro.html">C Introduction</a></li>
+        <span> *Keywords & Identifiers<br>
+          *Variables & Constants<br>
+          *C Data Types<br>
+          *C Input/Output<br>
+          *C Operators<br>
+        </span>
+        <li><a href="flowcontrol.html">C Flow Control</a></li>
+        <span>
+          *C if...else<br>
+          *C for Loop<br>
+          *C while Loop<br>
+          *C break and continue<br>
+          *C switch...case<br>
+          *C Programming goto<br>
+          </p>
+          <li><a href="C Functions.html">C Functions</a></li>
+          <span>
+            *C Programming Functions<br>
+            *C User-defined Functions<br>
+            *C Function Types<br>
+            *C Recursion<br>
+            *C Storage Class<br>
+          </span>
+          <li><a href="c array.html">C Programming Arrays</a></li>
+          <span>
+            *C Programming Arrays
+            *C Multi-dimensional Arrays<br>
+            *C Arrays & Function<br>
+          </span>
+          <li><a href="C pointernotes.html">C Programming Pointers</a></li>
+          <span>
+            *C Programming Pointers<br>
+            *C Pointers & Arrays<br>
+            *C Pointers And Functions<br>
+            *C Memory Allocation<br>
+          </span>
+          <li><a href="Strings.html">C Programming Strings</a></li>
+          <span>
+            *C Programming String<br>
+            *C String Functions<br>
+          </span>
+          <li><a href="Structure&Union.html">Structure & Union</a></li>
+          <span>
+            *C Structure<br>
+            *C Struct & Pointers<br>
+            *C Struct & Function<br>
+            *C Unions<br>
+          </span>
+      </ul>
+    </nav>
+
+
+  </header>
+  <section>
+    <h1>
+      <center>Introduction To C Programming Arrays</center>
+    </h1>
+    <h2>Overview</h2>
+    <ul>
+      <li>An array is a collection of data items, all of the same type, accessed using a common name.</li>
+      <li>A one-dimensional array is like a list;&nbsp; A two dimensional array is like a table;&nbsp; The C language
+        places no limits on the number of dimensions in an array, though specific implementations may.</li>
+      <li>Some texts refer to one-dimensional arrays as <em><strong>vectors</strong></em>, two-dimensional arrays as
+        <em><strong>matrices</strong></em>, and use the general term <em><strong>arrays</strong></em> when the number of
+        dimensions is unspecified or unimportant.
+      </li>
+    </ul>
+    <h2>Declaring Arrays</h2>
+    <ul>
+      <li>Array variables are declared identically to variables of their data type, except that the variable name is
+        followed by one pair of square [&nbsp;] brackets for each dimension of the array.</li>
+      <li>Uninitialized arrays must have the dimensions of their rows, columns, etc. listed within the square brackets.
+      </li>
+      <li>Dimensions used when declaring arrays in C must be positive integral constants or constant expressions.</li>
+      <li>It's important to note that the size and type of an array cannot be changed once it is declared.</li>
+    </ul>
+    <h2>Few Keynotes.</h2>
+    <img src="" alt="Syntax">
+    <ul>
+      <li>Arrays have 0 as the first index, not 1. In this example, mark[0] is the first element.</li>
+      <li>If the size of an array is n, to access the last element, the n-1 index is used. In this example, mark[4]</li>
+      <li>Suppose the starting address of mark[0] is 2120d. Then, the address of the mark[1] will be 2124d. Similarly,
+        the
+        address of mark[2] will be 2128d and so on.
+        This is because the size of a float is 4 bytes.</li>
+      <li>It's important to note that the size and type of an array cannot be changed once it is declared.</li>
+    </ul>
+    <h2>Initialising Array</h2>
+    <p>It is possible to initialize an array during declaration. For example,</p>
+    <pre>
+      <code class="language-clike">int mark[5] = {19, 10, 8, 17, 9};</code></pre>
+    <p>You can also initialize an array like this.</p>
+    <pre> <code class="language-clike">int mark[] = {19, 10, 8, 17, 9};</code></pre>
+    <p>Here, we haven't specified the size. However, the compiler knows its size is 5 as we are initializing it with 5
+      elements.</p>
+    <h3>Input and Output Array Elements</h3>
+    <p>Here's how you can take input from the user and store it in an array element.</p>
+    <pre>
+    // take input and store it in the 3rd element
+    ​ <code class="language-clike">scanf("%d", &mark[2]);</code>
+    
+    // take input and store it in the ith element
+    <code class="language-clike"> scanf("%d", &mark[i-1]);</code>
+  </pre>
+
+    <p>
+    <h3>Example 1: Array Input/Output</h3>
+    <pre> <code class="language-clike">
+        // Program to take 5 values from the user and store them in an array
+// Print the elements stored in the array
+#include <stdio.h>
+
+int main() {
+  int values[5];
+
+  printf("Enter 5 integers: ");
+
+  // taking input and storing it in an array
+  for(int i = 0; i < 5; ++i) {
+     scanf("%d", &values[i]);
+  }
+
+  printf("Displaying integers: ");
+
+  // printing elements of an array
+  for(int i = 0; i < 5; ++i) {
+     printf("%d\n", values[i]);
+  }
+  return 0;
+}
+</code>
+    </pre>
+    <div>Output</div>
+    <pre> <code class="language-clike">
+Enter 5 integers: 1
+-3
+34
+0
+3
+Displaying integers: 1
+-3
+34
+0
+3
+</code>c
+    </pre>
+    Here, we have used a for loop to take 5 inputs from the user and store them in an array. Then, using another for
+    loop,
+    these elements are displayed on the screen.
+    </p>
+    <h3>Access elements out of its bound!</h3>
+    <p>Suppose if you have declared 6 Elements.Let's consider</p>
+    <div><strong>int testArray[6];</strong></div>
+    <p>You can now access the elements from [0] to [5].</p>
+    <p>Now let's say if you try to access testArray[10]. The element is not available. This may cause unexpected output
+      (undefined behavior). Sometimes you might get an error and some other time your program may run correctly.</p>
+    <p>Hence, you should never access elements of an array outside of its bound.</p>
+
+    <h2>C Multidimensional Arrays</h2>
+    <p>In C programming, you can create an array of arrays. These arrays are known as multidimensional arrays. For
+      example,</p>
+    <pre><code class="language-clike">int x[4][5]</pre></code>
+    <p>Here, x is a two-dimensional (2d) array. The array can hold 20 elements.You can think the array as a table with 4
+      rows and each row has 5 columns. </p>
+    <p>Similarly, you can declare a three-dimensional (3d) array. For example,</p>
+    <pre><code class="language-clike">int x[3][4][5]</code></pre>
+    <p>Here, the array y can hold 60 elements.</p>
+    <h3>How to initialise Multi-dimensional Array?</h3>
+    <p>Initialising A 2-D array</p>
+    <pre><code class="language-clike">
+    // Different ways to initialize two-dimensional array
+
+    int c[2][3] = {{1, 3, 0}, {-1, 5, 9}};
+             
+    int c[][3] = {{1, 3, 0}, {-1, 5, 9}};
+                    
+    int c[2][3] = {1, 3, 0, -1, 5, 9};</code>
+  </pre>
+    <p>Initialization of a 3d array</p>
+    <pre><code class="language-clike">
+    int test[2][3][4] = {
+        {{3, 4, 2, 3}, {0, -3, 9, 11}, {23, 12, 23, 2}},
+        {{13, 4, 56, 3}, {5, 9, 3, 5}, {3, 1, 4, 9}}};
+    </code>
+  </pre>
+    <h3>Example-1</h3>
+    <pre><code class="language-clike">
+    // C program to find the sum of two matrices of order 2*2
+
+    #include <stdio.h>
+    int main()
+    {
+      float a[2][2], b[2][2], result[2][2];
+    
+      // Taking input using nested for loop
+      printf("Enter elements of 1st matrix\n");
+      for (int i = 0; i < 2; ++i)
+        for (int j = 0; j < 2; ++j)
+        {
+          printf("Enter a%d%d: ", i + 1, j + 1);
+          scanf("%f", &a[i][j]);
+        }
+    
+      // Taking input using nested for loop
+      printf("Enter elements of 2nd matrix\n");
+      for (int i = 0; i < 2; ++i)
+        for (int j = 0; j < 2; ++j)
+        {
+          printf("Enter b%d%d: ", i + 1, j + 1);
+          scanf("%f", &b[i][j]);
+        }
+    
+      // adding corresponding elements of two arrays
+      for (int i = 0; i < 2; ++i)
+        for (int j = 0; j < 2; ++j)
+        {
+          result[i][j] = a[i][j] + b[i][j];
+        }
+    
+      // Displaying the sum
+      printf("\nSum Of Matrix:");
+    
+      for (int i = 0; i < 2; ++i)
+        for (int j = 0; j < 2; ++j)
+        {
+          printf("%.1f\t", result[i][j]);
+    
+          if (j == 1)
+            printf("\n");
+        }
+      return 0;
+    }</code>
+  </pre>
+    <p>Output</p>
+    <pre><code class="language-clike">
+    Enter elements of 1st matrix
+    Enter a11: 2;
+    Enter a12: 0.5;
+    Enter a21: -1.1;
+    Enter a22: 2;
+    Enter elements of 2nd matrix
+    Enter b11: 0.2;
+    Enter b12: 0;
+    Enter b21: 0.23;
+    Enter b22: 23;
+    
+    Sum Of Matrix:
+    2.2     0.5
+    -0.9    25.0
+    </code>
+  </pre>
+    <H3>Example-2</H3>
+    <pre><code class="language-clike">
+    // C Program to store and print 12 values entered by the user
+
+    #include <stdio.h>
+    int main()
+    {
+      int test[2][3][2];
+    
+      printf("Enter 12 values: \n");
+    
+      for (int i = 0; i < 2; ++i)
+      {
+        for (int j = 0; j < 3; ++j)
+        {
+          for (int k = 0; k < 2; ++k)
+          {
+            scanf("%d", &test[i][j][k]);
+          }
+        }
+      }
+    
+      // Printing values with proper index.
+    
+      printf("\nDisplaying values:\n");
+      for (int i = 0; i < 2; ++i)
+      {
+        for (int j = 0; j < 3; ++j)
+        {
+          for (int k = 0; k < 2; ++k)
+          {
+            printf("test[%d][%d][%d] = %d\n", i, j, k, test[i][j][k]);
+          }
+        }
+      }
+    
+      return 0;
+    }</code>
+  </pre>
+    <p>Output</p>
+    <pre><code class="language-clike">
+    Enter 12 values: 
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    
+    Displaying Values:
+    test[0][0][0] = 1
+    test[0][0][1] = 2
+    test[0][1][0] = 3
+    test[0][1][1] = 4
+    test[0][2][0] = 5
+    test[0][2][1] = 6
+    test[1][0][0] = 7
+    test[1][0][1] = 8
+    test[1][1][0] = 9
+    test[1][1][1] = 10
+    test[1][2][0] = 11
+    test[1][2][1] = 12    
+  </pre></code>
+    <h2>C Arrays and Functions</h2>
+    <p>In C programming, you can pass an entire array to functions. Before we learn that, let's see how you can pass
+      individual elements of an array to functions.</p>
+    <h3>Example 1: Pass Individual Array Elements</h3>
+    <pre><code class="language-clike">
+    #include <stdio.h>
+        void display(int age1, int age2) {
+          printf("%d\n", age1);
+          printf("%d\n", age2);
+        }
+        
+        int main() {
+          int ageArray[] = {2, 8, 4, 12};
+        
+          // pass second and third elements to display()
+          display(ageArray[1], ageArray[2]); 
+          return 0;
+        }        </code>
+</pre>
+    <p>Output</p><code class="language-clike">
+    <pre>
+8
+4</code>
+    </pre>
+    <p>Here, we have passed array parameters to the <em><strong>display()</strong></em> function in the same way we pass
+      variables to a function.</p>
+
+    <h3>Pass Multidimensional Arrays to a Function</h3>
+    <p>To pass multidimensional arrays to a function, only the name of the array is passed to the function (similar to
+      one-dimensional arrays).</p>
+    <h3>Example 2: Pass two-dimensional arrays</h3>
+    <pre><code class="language-clike">
+    #include <stdio.h>
+        void displayNumbers(int num[2][2]);
+        
+        int main() {
+          int num[2][2];
+          printf("Enter 4 numbers:\n");
+          for (int i = 0; i < 2; ++i) {
+            for (int j = 0; j < 2; ++j) {
+              scanf("%d", &num[i][j]);
+            }
+          }
+        
+          // pass multi-dimensional array to a function
+          displayNumbers(num);
+        
+          return 0;
+        }
+        
+        void displayNumbers(int num[2][2]) {
+          printf("Displaying:\n");
+          for (int i = 0; i < 2; ++i) {
+            for (int j = 0; j < 2; ++j) {
+              printf("%d\n", num[i][j]);
+            }
+          }
+        }</code>
+</pre>
+    <p>Output</p>
+    <pre><code class="language-clike">
+Enter 4 numbers:
+1
+5
+6
+9
+Displaying:
+1
+5
+6
+9</code>
+</pre>
+    <p>This signifies that the function takes a two-dimensional array as an argument. We can also pass arrays with more
+      than 2 dimensions as a function argument.</p>
+    <p>When passing two-dimensional arrays, it is not mandatory to specify the number of rows in the array. However, the
+      number of columns should always be specified.</p>
+    <p>For example,</p>
+    <pre><code class="language-clike">
+    void displayNumbers(int num[][2]) {
+        // code
+      }</code>
+</pre>
+
+  </section>
+
+  <script src="./js/prism.js"></script>
+</body>
+
+</html>

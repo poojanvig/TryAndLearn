@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/questions.css">
+    <link href="./css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar btn">
+            <ul>
+                <li><strong>C Programming</strong></li>
+                <li><a href="CIntro.html">C Introduction</a></li>
+                <span> *Keywords & Identifiers<br>
+                    *Variables & Constants<br>
+                    *C Data Types<br>
+                    *C Input/Output<br>
+                    *C Operators<br>
+                </span>
+                <li><a href="flowcontrol.html">C Flow Control</a></li>
+                <span>
+                    *C if...else<br>
+                    *C for Loop<br>
+                    *C while Loop<br>
+                    *C break and continue<br>
+                    *C switch...case<br>
+                    *C Programming goto<br>
+                    </p>
+                    <li><a href="C Functions.html">C Functions</a></li>
+                    <span>
+                        *C Programming Functions<br>
+                        *C User-defined Functions<br>
+                        *C Function Types<br>
+                        *C Recursion<br>
+                        *C Storage Class<br>
+                    </span>
+                    <li><a href="c array.html">C Programming Arrays</a></li>
+                    <span>
+                        *C Programming Arrays
+                        *C Multi-dimensional Arrays<br>
+                        *C Arrays & Function<br>
+                    </span>
+                    <li><a href="C pointernotes.html">C Programming Pointers</a></li>
+                    <span>
+                        *C Programming Pointers<br>
+                        *C Pointers & Arrays<br>
+                        *C Pointers And Functions<br>
+                        *C Memory Allocation<br>
+                    </span>
+                    <li><a href="Strings.html">C Programming Strings</a></li>
+                    <span>
+                        *C Programming String<br>
+                        *C String Functions<br>
+                    </span>
+                    <li><a href="Structure&Union.html">Structure & Union</a></li>
+                    <span>
+                        *C Structure<br>
+                        *C Struct & Pointers<br>
+                        *C Struct & Function<br>
+                        *C Unions<br>
+                    </span>
+            </ul>
+        </nav>
+
+
+    </header>
+    <section>
+        <h1>Introduction to Pointers in C</h1><br>
+        <p>Pointers in C are easy and fun to learn. Some C programming tasks are performed more easily with pointers,
+            and
+            other tasks, such as dynamic memory allocation, cannot be performed without using pointers. So it becomes
+            necessary to learn pointers to become a perfect C programmer. Let's start learning them in simple and easy
+            steps.</p>
+        <h3>What are pointers?</h3>
+        <p>A pointer is a variable whose value is the address of another variable, i.e., direct address of the memory
+            location. Like any variable or constant, you must declare a pointer before using it to store any variable
+            address.The general form of a pointer variable declaration is −</p>
+        <div> <strong>type *var-name;</strong></div>
+        <p>Here, type is the pointer's base type; it must be a valid C data type and var-name is the name of the pointer
+            variable. The asterisk * used to declare a pointer is the same asterisk used for multiplication. However, in
+            this statement the asterisk is being used to designate a variable as a pointer.You can also declare pointers
+            in
+            these ways.
+        <div><strong>int *p1; int * p2;</strong></div>
+        <h3>Benifits of using pointers.</h3>
+        <ul>
+            <li>Pointers allow the passing of arrays and strings to functions more efficiently.</li>
+            <li>Pointers make it possible to return more than one value from the function.</li>
+            <li>Pointers reduce the length and complexity of a program.</li>
+            <li>Pointers increase the processing speed.</li>
+            <li>Pointers save the memory.</li>
+        </ul>
+        <h3>How to use pointers in C</h3>
+        <h4>Example:-1</h4>
+        <pre><code class="language-clike">
+        #include <stdio.h>
+
+            int main () {
+            
+               int  var = 20;   /* actual variable declaration */
+               int  *ip;        /* pointer variable declaration */
+            
+               ip = &var;  /* store address of var in pointer variable*/
+            
+               printf("Address of var variable: %x\n", &var  );
+            
+               /* address stored in pointer variable */
+               printf("Address stored in ip variable: %x\n", ip );
+            
+               /* access the value using the pointer */
+               printf("Value of *ip variable: %d\n", *ip );
+            
+               return 0;
+            }</code>
+    </pre>
+        When the above code is compiled and executed, it produces the following result −
+        <div><strong>Address of var variable: bffd8b3c
+                <div>Address stored in ip variable: bffd8b3c</div>
+                <div>Value of *ip variable: 20</div>
+            </strong></div>
+        <h3>Null Pointers</h3>
+        It is always a good practice to assign a NULL value to a pointer variable in case you do not have an exact
+        address
+        to be assigned. This is done at the time of variable declaration. A pointer that is assigned NULL is called a
+        null
+        pointer.</p>
+        <p>The NULL pointer is a constant with a value of zero defined in several standard libraries. Consider the
+            following
+            program −
+        <pre><code class="language-clike">
+            #include <stdio.h>
+
+                int main () {
+                
+                   int  *ptr = NULL;
+                
+                   printf("The value of ptr is : %x\n", ptr  );
+                 
+                   return 0;
+                }</code>
+         </pre>
+        When the above code is compiled and executed, it produces the following result −
+        <div><strong>The value of ptr is 0</strong></div>
+        </p>
+        <h1>C Pointer and Arays</h1>
+        <p>Before we understand the concept of arrays of pointers, let us consider the following example, which uses an
+            array of 3 integers −</p>
+        <pre><code class="language-clike">
+        #include <stdio.h>
+ 
+            const int MAX = 3;
+             
+            int main () {
+            
+               int  var[] = {10, 100, 200};
+               int i;
+             
+               for (i = 0; i < MAX; i++) {
+                  printf("Value of var[%d] = %d\n", i, var[i] );
+               }
+               
+               return 0;
+            }</code>
+     </pre>
+        <p>When the above code is compiled and executed, it produces the following result −
+        <div><strong>Value of var[0] = 10</strong></div>
+        <div><strong>Value of var[1] = 100</strong></div>
+        <div><strong>Value of var[2] = 200</strong></div><br>
+
+        There may be a situation when we want to maintain an array, which can store pointers to an int or char or any
+        other
+        data type available. Following is the declaration of an array of pointers to an integer −<br>
+        <div><strong>int *ptr[MAX];</strong></div><br>
+        In most contexts, array names decay to pointers. In simple words, array names are converted to pointers. That's
+        the
+        reason why you can use pointers to access elements of arrays. However, you should remember that pointers and
+        arrays
+        are not the same.</p>
+        <p>Let's look at some Examples to understand the topic well!</p>
+        <p>
+        <h4>Example-1</h4>
+        <pre><code class="language-clike">
+                #include <stdio.h>
+                    int main() {
+                      int i, x[6], sum = 0;
+                      printf("Enter 6 numbers: ");
+                      for(i = 0; i < 6; ++i) {
+                      // Equivalent to scanf("%d", &x[i]);
+                          scanf("%d", x+i);
+                    
+                      // Equivalent to sum += x[i]
+                          sum += *(x+i);
+                      }
+                      printf("Sum = %d", sum);
+                      return 0;
+                    }</code>
+             </pre>
+        When you run the program, the output will be:
+        <div><strong>Enter 6 numbers: 2</strong></div>
+        <div><strong>3</strong></div>
+        <div><strong>4</strong></div>
+        <div><strong>4</strong></div>
+        <div><strong>12</strong></div>
+        <div><strong>4</strong></div>
+        <div><strong>Sum = 29</strong></div>
+        Here, we have declared an array x of 6 elements. To access elements of the array, we have used pointers.
+
+        <h4>Example-2</h4>
+        Store Numbers and Calculate Average Using Arrays
+        <pre><code class="language-clike">
+                #include <stdio.h>
+                    int main() {
+                        int n, i;
+                        float num[100], sum = 0.0, avg;
+                    
+                        printf("Enter the numbers of elements: ");
+                        scanf("%d", &n);
+                    
+                        while (n > 100 || n < 1) {
+                            printf("Error! number should in range of (1 to 100).\n");
+                            printf("Enter the number again: ");
+                            scanf("%d", &n);
+                        }
+                    
+                        for (i = 0; i < n; ++i) {
+                            printf("%d. Enter number: ", i + 1);
+                            scanf("%f", &num[i]);
+                            sum += num[i];
+                        }
+                    
+                        avg = sum / n;
+                        printf("Average = %.2f", avg);
+                        return 0;
+                    }</code>
+             </pre>
+        <div><strong>Enter the numbers of elements: 6</strong></div>
+        <div><strong>1. Enter number: 45.3</strong></div>
+        <div><strong>2. Enter number: 67.5</strong></div>
+        <div><strong>3. Enter number: -45.6</strong></div>
+        <div><strong>4. Enter number: 20.34</strong></div>
+        <div><strong>5. Enter number: 33</strong></div>
+        <div><strong>6. Enter number: 45.6</strong></div>
+        <div><strong>Average = 27.69</strong></div>
+        </p>
+        <h1>C Pointers and Functions</h1>
+        <p>In C programming, it is also possible to pass addresses as arguments to functions.
+
+            To accept these addresses in the function definition, we can use pointers. It's because pointers are used to
+            store addresses.To do so, simply declare the function parameter as a pointer type. Let's take an example:
+        <h4>Example-1</h4>
+        <pre><code class="language-clike">
+                #include <stdio.h>
+                    void swap(int *n1, int *n2);
+                    
+                    int main()
+                    {
+                        int num1 = 5, num2 = 10;
+                    
+                        // address of num1 and num2 is passed
+                        swap( &num1, &num2);
+                    
+                        printf("num1 = %d\n", num1);
+                        printf("num2 = %d", num2);
+                        return 0;
+                    }
+                    
+                    void swap(int* n1, int* n2)
+                    {
+                        int temp;
+                        temp = *n1;
+                        *n1 = *n2;
+                        *n2 = temp;
+                    }</code>
+            </pre>
+        When you run the program, the output will be:
+        <div><strong>num1 = 10</strong></div>
+        <div><strong>num2 = 5</strong></div>
+        The address of num1 and num2 are passed to the swap() function using swap(&num1, &num2);.
+        </p>
+        <p>When *n1 and *n2 are changed inside the swap() function, num1 and num2 inside the main() function are also
+            changed.</p>
+        <p>Inside the swap() function, *n1 and *n2 swapped. Hence, num1 and num2 are also swapped.</p>
+        <p>Notice that swap() is not returning anything; its return type is void.</p>
+        <p>
+        <h4>Example-2</h4>
+        Following is a simple example where we pass an unsigned long pointer to a function and change the value inside
+        the
+        function which reflects back in the calling function −
+        </p>
+        <p>
+        <pre><code class="language-clike">
+                #include <stdio.h>
+                    #include <time.h>
+                     
+                    void getSeconds(unsigned long *par);
+                    
+                    int main () {
+                    
+                       unsigned long sec;
+                       getSeconds( &sec );
+                    
+                       /* print the actual value */
+                       printf("Number of seconds: %ld\n", sec );
+                    
+                       return 0;
+                    }
+                    
+                    void getSeconds(unsigned long *par) {
+                       /* get the current number of seconds */
+                       *par = time( NULL );
+                       return;
+                    }</code>
+            </pre>
+        When the above code is compiled and executed, it produces the following result −
+        <div><strong>Number of seconds :1294450468</strong></div>
+        </p>
+        <p>
+        <h1>C Dynamic Memory Allocation</h1>
+        <h3>Here, you'll learn to dynamically allocate memory in your C program using standard library functions:
+            malloc(),
+            calloc(), free() and realloc().</h3>
+        As you know, an array is a collection of a fixed number of values. Once the size of an array is declared, you
+        cannot
+        change it.
+
+        </p>
+        <p>Sometimes the size of the array you declared may be insufficient. To solve this issue, you can allocate
+            memory
+            manually during run-time. This is known as dynamic memory allocation in C programming.</p>
+        <p>To allocate memory dynamically, library functions are malloc(), calloc(), realloc() and free() are used.
+            These
+            functions are defined in the <stdlib.h> header file.</p>
+        <ul>
+            <li>
+                <p>
+                <h3>C malloc()</h3>
+            </li>
+        </ul>
+        The name "malloc" stands for memory allocation.
+        </p>
+        <p>The malloc() function reserves a block of memory of the specified number of bytes. And, it returns a pointer
+            of
+            void which can be casted into pointers of any form.
+        <h4>Syntax of malloc()</h4>
+        <div><strong>ptr = (castType*) malloc(size);</strong></div>
+        <h4>Example</h4>
+        <div><strong>ptr = (float*) malloc(100 * sizeof(float));
+            </strong></div>
+
+        </p>
+        <p>
+        <ul>
+            <li>
+                <h3>C calloc()</h3>
+            </li>
+        </ul>
+        The name "calloc" stands for contiguous allocation
+        </p>
+        <p>The malloc() function allocates memory and leaves the memory uninitialized, whereas the calloc() function
+            allocates memory and initializes all bits to zero.</p>
+        <h4>Syntax of calloc()</h4>
+        <div><strong>ptr = (castType*)calloc(n, size);
+            </strong></div>
+        <h4>Example</h4>
+        <div><strong>ptr = (float*) calloc(25, sizeof(float));
+            </strong></div>
+        <p>
+        <ul>
+            <li>
+                <h3>C free()</h3>
+            </li>
+        </ul>
+        Dynamically allocated memory created with either calloc() or malloc() doesn't get freed on their own. You must
+        explicitly use free() to release the space.
+        </p>
+        <h4>Syntax of free()</h4>
+        <div><strong>free(ptr);</strong></div>
+        <p>
+        <ul>
+            <li>
+                <h3>C realloc()</h3>
+            </li>
+        </ul>
+        If the dynamically allocated memory is insufficient or more than required, you can change the size of previously
+        allocated memory using the realloc() function.
+        </p>
+        <h4>Syntax of realloc()</h4>
+        <div><strong>ptr = realloc(ptr, x);</strong></div>
+        <p>
+        <h4>
+            Example-1 Use of malloc() and free()
+        </h4>
+        <pre><code class="language-clike">
+                // Program to calculate the sum of n numbers entered by the user
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  int n, i, *ptr, sum = 0;
+
+  printf("Enter number of elements: ");
+  scanf("%d", &n);
+
+  ptr = (int*) malloc(n * sizeof(int));
+ 
+  // if memory cannot be allocated
+  if(ptr == NULL) {
+    printf("Error! memory not allocated.");
+    exit(0);
+  }
+
+  printf("Enter elements: ");
+  for(i = 0; i < n; ++i) {
+    scanf("%d", ptr + i);
+    sum += *(ptr + i);
+  }
+
+  printf("Sum = %d", sum);
+  
+  // deallocating the memory
+  free(ptr);
+
+  return 0;
+}</code>
+            </pre>
+        <div>Output</div>
+        <div><strong>Enter number of elements: 3</strong></div>
+        <div><strong>Enter elements: 100</strong></div>
+        <div><strong>20</strong></div>
+        <div><strong>36</strong></div>
+        <div><strong>Sum = 156</strong></div>
+        <h4>Example-2 Use of calloc() and free()</h4>
+        <pre><code class="language-clike">
+                // Program to calculate the sum of n numbers entered by the user
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  int n, i, *ptr, sum = 0;
+  printf("Enter number of elements: ");
+  scanf("%d", &n);
+
+  ptr = (int*) calloc(n, sizeof(int));
+  if(ptr == NULL) {
+    printf("Error! memory not allocated.");
+    exit(0);
+  }
+
+  printf("Enter elements: ");
+  for(i = 0; i < n; ++i) {
+    scanf("%d", ptr + i);
+    sum += *(ptr + i);
+  }
+
+  printf("Sum = %d", sum);
+  free(ptr);
+  return 0;
+}</code>
+            </pre>
+        <div>Output</div>
+        <div><strong>Enter number of elements: 3</strong></div>
+        <div><strong>Enter elements: 100</strong></div>
+        <div><strong>20</strong></div>
+        <div><strong>36</strong></div>
+        <div><strong>Sum = 156</strong></div>
+        </p>
+        <div>Quiz Time!! <a href="" target="_blank"></a></div>
+    </section>
+    <script src="./js/prism.js"></script>
+</body>
+
+</html>
